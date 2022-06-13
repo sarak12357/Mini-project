@@ -1,2 +1,2 @@
 # Mini-project
-HTML, CSS, JS with login Animation, trasnition, Flex, grid
+HTML, CSS, JS with login Animation, transition, Flex, grid
