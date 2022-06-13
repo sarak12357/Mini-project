@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e4e7eb;
+}
+
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background-color: rgb(42, 51, 58);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.container .forms{
+    display: flex;
+    height: 440px;
+    align-items: center;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+.container .form {
+    width: 50%;
+    padding: 30px;
+    transition: margin-left 0.18s ease;
+} 
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.9s ease;
+}
+
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+
+.container .form .title {
+    position: relative;
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.form .input-field {
+    margin-top: 30px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    
+}
+
+.input-field input{
+    border: none;
+    outline: none;
+    background-color: rgb(42, 51, 58);
+    border-bottom: 2px solid #fff;
+    font-size: 15px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 15px 42px;
+    color: white;
+}
+.input-field input:is(:focus, :valid){
+    border-bottom: 2px solid rgb(80, 80, 252);
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+}
+
+.input-field i.icon {
+    left: 0;
+}
+.input-field i.ShowHide{
+    right: 5px;
+    cursor: pointer;
+}
+.form .checkbox-text{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+    color: rgb(214, 209, 209);
+}
+
+.checkbox-content input {
+    margin: 0 8px -2px 4px;
+}
+
+.form a{
+    text-decoration: none;
+    /* color: rgb(214, 209, 209); */
+    color:rgb(120, 120, 228);
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+.form .button input{
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: black;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.button input:hover{
+    background-color: rgb(158, 158, 158);
+    color: black;
+    border-bottom: 0px;
+}
+.form .login-sign-up{
+    margin-top: 30px;
+    text-align: center;
+}
+.login-sign-up .text{
+    color: #fff;
+}

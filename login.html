@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudy | Login</title>
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Login Form -->
+
+        <div class="forms">
+            <div class="form login">
+                <span class="title">
+                    Login
+                </span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash ShowHide"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text">Forgot password ?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Login" onClick="window.location.href='index.html';">
+                    </div>
+                </form>
+
+                <div class="login-sign-up">
+                    <span class="text signup-link">Not a member ? <a href="#" class="text signup-text">Signup now</a></span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+
+            <div class="form signup">
+                <span class="title">Register</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="fa-solid fa-user icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm your password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash ShowHide"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Register" onClick="window.location.href='login.html';">
+                    </div>
+                </form>
+
+                <div class="login-sign-up">
+                    <span class="text login-link">Done registering ?<a href="#" class="text signup-text"> Login</a></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container"),
+            pwShowHide = document.querySelectorAll(".ShowHide"),
+            pwFields = document.querySelectorAll(".password"),
+            signUp = document.querySelector(".signup-link"),
+            login = document.querySelector(".login-link");
+
+            pwShowHide.forEach(eyeIcon => {
+                eyeIcon.addEventListener("click", () => {
+                    pwFields.forEach(pwField => {
+                        if(pwField.type === "password"){
+                            pwField.type = "text";
+
+                            pwShowHide.forEach(icon => {
+                                icon.classList.replace("fa-eye-slash", "fa-eye");
+                            })
+                        } else {
+                            pwField.type = "password";
+
+                            pwShowHide.forEach(icon => {
+                                icon.classList.replace("fa-eye", "fa-eye-slash");
+                            })
+                        }
+                    })
+                })
+            })
+
+
+            signUp.addEventListener("click", () => {
+                container.classList.add("active");
+            });
+            login.addEventListener("click", () => {
+                container.classList.remove("active");
+            });
+
+    </script>
+
+</body>
+
+</html>
